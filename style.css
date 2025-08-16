@@ -1,0 +1,132 @@
+/* 全局样式 */
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+header {
+    background-color: #ffffff;
+    color: #222;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-weight: 500;
+    font-size: 1.8rem;
+}
+
+nav a {
+    color: #555;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #1e88e5; /* 高级蓝色点缀 */
+}
+
+main {
+    padding: 40px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: #222;
+}
+
+/* fade-in 动画 */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 按钮样式 */
+.btn {
+    padding: 10px 25px;
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.btn:hover {
+    background-color: #1565c0;
+    transform: translateY(-2px);
+}
+
+/* 卡片翻转 */
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.card {
+    width: 160px;
+    height: 200px;
+    perspective: 600px;
+    position: relative;
+}
+
+.card .front, .card .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.card .front {
+    background-color: #90caf9; /* 高级淡蓝色 */
+    color: #222;
+}
+
+.card .back {
+    background-color: #4e8cb6; /* 高级淡粉色 */
+    color: #222;
+    transform: rotateY(180deg);
+}
+
+.card:hover .front {
+    transform: rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: rotateY(0deg);
+}
+
+/* Footer */
+footer {
+    background-color: #ffffff;
+    color: #555;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 60px;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
+}
